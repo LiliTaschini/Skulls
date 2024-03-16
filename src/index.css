@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tourney:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(129, 129, 129);
+  color: white;
+  width: 100%;
+  height: 100vh;
+}
+#root{
+  height: 100%;
+}
+nav{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  font-size: 17px;
+  font-family: "Tourney", sans-serif;
+  z-index: 5;
+}
+.navbar__container__buttons{
+  display: flex;
+  gap: 25px;
+}
+.navbar__button{
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.navbar__button__menu{
+  letter-spacing: 0;
+  transition: letter-spacing 0.3s ease;
+}
+
+.navbar__button__icon{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  overflow: hidden;
+}
+
+.navbar__button__icon div{
+  background-color: white;
+  width: 30px;
+  height: 1px;
+  position: relative;
+  left: 0;
+  transition: left 0.7s;
+}
+
+
+.navbar__button:hover .navbar__first__line{
+  left: 10px;
+  transition: left 0.7s;
+}
+
+.navbar__button:hover .navbar__third__line{
+  left: -10px;
+  transition: left 0.7s;
+}
+
+.navbar__button:hover .navbar__button__menu{
+   letter-spacing: 5px;
+   transition: letter-spacing 0.3s ease;
+}
+
+.navbar__content{
+  position: fixed;
+  top: -120%;
+  left: 0;
+  font-family: "Tourney", sans-serif;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.479);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.486);
+  z-index: 4; 
+  transition: top 0.5s ease;
+}
+
+.open{
+  top: 0;
+  transition: top 0.5s ease;
+}
+
+.navbar__content__button{
+  all: unset;
+  font-size: 70px;
+  font-weight: 100;
+  transition: font-weight 0.3s ease;
+}
+
+.navbar__content__button:hover{
+  filter:drop-shadow(0 0 10px rgba(0,0,0, .8));
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100.1;
+    transition: font-weight 0.3s ease;
+}
+
+.navbar__cart{
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+}
+
+.container__greetings{
+  width: 100%;
+  height: 50px;
+  background-color: #616061;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  font-style: normal;
+  overflow: hidden;
+}
+
+.animated__text{
+  width: 70%;
+  display: inline-block; 
+  animation: slide-in 9s linear infinite;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.home__container{
+  position: relative;
+  height: calc(100% - 250px);
+  font-family: "Urbanist", sans-serif;
+  font-size: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  z-index: 1;
+  margin-bottom: 150px;
+}
+.home__container .wonder{
+  color: rgb(58, 11, 46);
+}
+.home__container p{
+  margin-top: 10px;
+  font-size: 30px;
+  z-index: 1;
+}
+.buttons__home__container{
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+.circle__home{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: #8f3e8d;
+    z-index: -1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0.7;
+}
+
+.circle__home__one{
+  right: 20%;
+  top: 12%;
+  width: 180px;
+  height: 180px;
+}
+
+.circle__home__two{
+  left: 23%;
+  bottom: 33%;
+}
+
+.circle__home__three{
+  left: 47%;
+  bottom: 5%;
+}
+.removeAllDefaultStyles{
+  all: unset;
+}
+.container__cards{
+  height: 100%;
+  position: relative;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 
+   repeat(
+     auto-fit,
+     minmax(300px, 1fr)
+   );  
+   gap: 30px;
+ }
+
+.card {
+  position: relative;
+  background-color: #C5C5C5;
+  width: 300px;
+  height: 280px;
+  border-radius: 6px;
+  box-shadow: 0 0 30px black;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card__header {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  top: 4%;
+  padding: 0 10px;
+  font-family: "Urbanist", sans-serif;
+  color: #8F3E8D;
+  position: absolute;
+  z-index: 2;
+}
+
+.card__title {
+  font-size: 35px; 
+}
+.container__card{
+  background-color: white;
+  transition: transform 0.3s ease-in-out; 
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.container__card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.card:hover .container__card {
+  transform: scale(1.1); 
+}
+
+.card__content {
+  padding-top: 15px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__content p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px; 
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  color: #616061;
+  text-align: center;
+}
+
+.card__item__count {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; 
+  background-color: white;
+  color: black;
+}
+
+.modal__close__btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  top: 10px;
+  right: 30px;
+  background: none;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+.modal__close__btn button{
+  all: unset;
+}
+.modal-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+.conteiner__details{
+  font-size: 17px; 
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  color: #616061;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.details__principal__img{
+  height: 250px;
+  width: auto; 
+}
+.details__variations{
+  display: flex;
+}
+.details__variations li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.details__variations span{
+  margin-left: 5px;
+}
+.details__variations img{
+  width: 100px;
+  height: auto;
+}
